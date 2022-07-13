@@ -14,10 +14,7 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation %>
     </div>
-      <div class="field">
-    <%= f.label :role %>
-    <%= f.select :role, options_for_select(User.roles.map { |key, value| [key.humanize, key] }), {prompt: "Select Role"} %>
-  </div>
+
   <% end %>
 
   <div class="actions">
