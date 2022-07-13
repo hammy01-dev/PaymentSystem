@@ -1,1 +1,13 @@
 <p>Hello</p>
+<% @users.each do |user|%>
+<br>
+<strong>current_signed_in</strong>
+<%= user.email %>
+
+<br>
+
+<%= user.created_by_invite?%>
+
+<%end%>
+
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>

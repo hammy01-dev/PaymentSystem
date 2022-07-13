@@ -41,6 +41,9 @@ gem 'devise'
 
 gem 'devise_invitable', '~> 2.0.0'
 
+gem 'colorize', '~> 0.8.1'
+gem 'pundit', '~> 1.1'
+
 
 
 group :development, :test do
