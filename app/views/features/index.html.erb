@@ -1,0 +1,10 @@
+<p>Features of Plan</p>
+<%= link_to "ADD New Feature", new_plan_feature_url %>
+<br>
+<ul>
+<% @feature.each do |f|%> 
+  <li><%= f.name%></li>
+  <%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure you want to delete?' }, remote: false %>
+   <td class="text-center"><%= link_to 'Edit', edit_feature_path(f) %></td>
+<%end%>
+<ul>
