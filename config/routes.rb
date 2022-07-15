@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'plans#index'
   resources :plans , only: [:index ,:create, :new ,:update ,:destroy] do
     resources :features , only: [:index ,:create, :new ]
+    resource :subscriptions, only: [:create]
   end
   resources :features, only: [:update ,:destroy,:edit]
 

@@ -6,5 +6,6 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
+    authorize @plan
   end
 end

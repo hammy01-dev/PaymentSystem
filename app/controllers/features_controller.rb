@@ -1,10 +1,14 @@
 class FeaturesController < ApplicationController
+  before_action :auth
+
   def index
     @feature = Feature.where(plan_id:params[:plan_id])
+    # authorize @feature
   end
   def new
     @plan = Plan.find(params[:plan_id])
     @features = Feature.new
+    authorize @features
   end
 
   def create
@@ -18,8 +22,6 @@ class FeaturesController < ApplicationController
 
 
   def edit
-    @plan = Plan.find(params[:plan_id])
-
     @feature = Feature.find(params[:id])
   end
 
@@ -40,5 +42,8 @@ class FeaturesController < ApplicationController
   def feature_params
     p params
     p params.require(:feature).permit(:code, :description, :name, :unit_price, :max_unit_limit)
+  end
+  def auth
+    # authorize Feature
   end
 end
