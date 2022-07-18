@@ -1,0 +1,10 @@
+ <div class="demo">
+    <div class="container">
+      <div class = "row">
+        <%= render @plans%>
+      </div>
+    </div>
+</div>
+
+
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
