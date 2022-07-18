@@ -1,0 +1,51 @@
+<% # @user%>
+<%#= render "form" ,usage:@usage %>
+<h2>Usage</h2>
+
+<%= form_with model:@usage do |form| %>
+
+  <% if @usage.errors.any? %>
+    <ul>
+    <% @usage.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
+
+
+
+
+  <div class="field form-group ">
+    <%= form.label :user %><br>
+    <%= form.select :user, @user.collect{|u| u.email}, selected: 'Bug' %>
+  </div>
+
+  <div class="field form-group ">
+    <%= form.label :plan %><br>
+    <%= form.select :plan, ['New', 'Started' , 'Resolved'], selected: 'new' %>
+  </div>
+
+  <div class="field form-group ">
+    <%= form.label :feature %><br>
+    <%= form.select :feature, [@user.first.email, 'Started' , 'Resolved'], selected: 'new' %>
+  </div>
+
+
+  <div class="field form-group" >
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit "Enter", class: "btn btn-secondary" %>
+  </div>
+
+<% end %>
+
+<br/>
+
+<button>
+<%# <%= link_to 'Back', project_bugs_path %> %>
+</button>

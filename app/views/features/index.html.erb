@@ -2,9 +2,20 @@
 <%= link_to "ADD New Feature", new_plan_feature_url %>
 <br>
 <ul>
-<% @feature.each do |f|%> 
+<% @feature.each do |f|%>
   <li><%= f.name%></li>
-  <%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure you want to delete?' }, remote: false %>
-   <td class="text-center"><%= link_to 'Edit', edit_feature_path(f) %></td>
+  <%if policy(:feature).show?%>
+    <%# <%= link_to 'Delete ', f, method: :delete, data: { confirm: 'Are you sure you want to delete?' }, remote: false %> %>
+
+    <%= link_to f, method: :delete, data: {confirm: "Are you sure you want to delete this Project?"}, remote:true do %>
+    Delete
+  <% end %>
+
+    <%= link_to 'Edit', edit_feature_path(f) %>
+  <%else%>
+    <br>
+   <%# <%= button_to 'Subscribe', edit_feature_path(f), method: :get %> %>
+   <% end %>
+
 <%end%>
 <ul>

@@ -1,10 +1,14 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users, controllers: { invitations: 'devise/invitations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'plans#index'
-  resources :plans , only: [:index ,:create, :new ,:update ,:destroy] do
-    resources :features , only: [:index ,:create, :new ]
+  resources :plans, only: %i[index create new update destroy] do
+    resources :features, only: %i[index create new]
+    resource :subscriptions, only: [:create]
   end
-  resources :features, only: [:update ,:destroy,:edit]
-
+  resources :features, only: %i[update destroy edit]
+  resources :usages
+  get 'user/:id/plans/', to: 'usages#plan'
 end
