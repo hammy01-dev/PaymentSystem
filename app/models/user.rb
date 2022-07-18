@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -7,5 +8,4 @@ class User < ApplicationRecord
   enum role: { admin: 0, buyer: 1 }
   has_many :subscriptions
   has_many :plan, through: :subscriptions
-
 end

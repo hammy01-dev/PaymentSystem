@@ -1,0 +1,55 @@
+<h2>Bug</h2>
+
+<%= form_with(model: [@project, @bug], local: true) do |form| %>
+
+  <% if @bug.errors.any? %>
+    <ul>
+    <% @bug.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
+
+  <div class="field form-group ">
+    <%= form.text_field :title, placeholder: 'Usage Table' %>
+  </div>
+
+
+  <div class="field form-group ">
+    <%= form.label :user %><br>
+    <%= form.select :users, ['Bug', 'Feature'], selected: 'Bug' %>
+  </div>
+
+  <div class="field form-group ">
+    <%= form.label :status %><br>
+    <%= form.select :status, ['New', 'Started' , 'Resolved'], selected: 'new' %>
+  </div>
+
+  <div class="field form-group " >
+    <%= form.label :deadline %><br>
+    <%= form.date_select :deadline %>
+  </div>
+
+  <div class="field form-group " >
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field form-group " >
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+    <br>
+    <br>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enter", class: "btn btn-secondary" %>
+  </div>
+
+<% end %>
+
+<br/>
+
+<button>
+<%= link_to 'Back', project_bugs_path %>
+</button>

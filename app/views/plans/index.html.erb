@@ -1,15 +1,10 @@
-<p>Hello</p>
-<% @plan.each do |plan|%>
-<br>
-<strong>name</strong>
-<%= plan.name %>
-
-<br>
-
-<%= plan.monthly_fee%>
-<%= link_to "Features", plan_features_url(plan.id), method: :get  %>
-<%= button_to 'Subscribe', plan_subscriptions_path(plan), method: :post %>
-<%end%>
+ <div class="demo">
+    <div class="container">
+      <div class = "row">
+        <%= render @plans%>
+      </div>
+    </div>
+</div>
 
 
 <%= button_to "logout", destroy_user_session_path, method: :delete  %>

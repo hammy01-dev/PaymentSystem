@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FeaturePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
@@ -10,12 +12,11 @@ class FeaturePolicy < ApplicationPolicy
   end
 
   def new?
-    puts 'hello'
     user.admin?
   end
+
   def show?
     user.admin?
-
   end
 
 end

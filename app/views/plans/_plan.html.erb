@@ -1,0 +1,25 @@
+                <div class="col-md-3 col-sm-6">
+                    <div class="pricingTable blue">
+                        <div class="pricingTable-header">
+                            <span class="heading">
+                                <h3><%= plan.name%></h3>
+                                <span class="subtitle">Lorem ipsum dolor sit</span>
+                            </span>
+                            <span class="price-value">$<%=plan.monthly_fee%> <span>monthly</span></span>
+                        </div>
+                        <div class="pricingContent">
+                            <ul>
+                                <%= render plan.features %>
+                            </ul>
+                        </div><!-- /  CONTENT BOX-->
+                        <div class="pricingTable-sign-up">
+                            <%= link_to 'Subscribe', plan_subscriptions_path(plan), method: :post, remote:true ,:class => "btn btn-block"%>
+                        </div><!-- BUTTON BOX-->
+                    </div>
+                </div>
+
+
+
+
+
+

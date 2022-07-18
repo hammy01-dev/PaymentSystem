@@ -5,11 +5,16 @@
 <% @feature.each do |f|%>
   <li><%= f.name%></li>
   <%if policy(:feature).show?%>
-    <%= link_to 'Delete ', f, method: :delete, data: { confirm: 'Are you sure you want to delete?' }, remote: false %>
+    <%# <%= link_to 'Delete ', f, method: :delete, data: { confirm: 'Are you sure you want to delete?' }, remote: false %> %>
+
+    <%= link_to f, method: :delete, data: {confirm: "Are you sure you want to delete this Project?"}, remote:true do %>
+    Delete
+  <% end %>
+
     <%= link_to 'Edit', edit_feature_path(f) %>
   <%else%>
     <br>
-   <%= button_to 'Subscribe', edit_feature_path(f), method: :get %>
+   <%# <%= button_to 'Subscribe', edit_feature_path(f), method: :get %> %>
    <% end %>
 
 <%end%>
