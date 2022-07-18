@@ -14,7 +14,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Rememberable
       t.datetime :remember_created_at
 
-
       t.string   :invitation_token
       t.datetime :invitation_created_at
       t.datetime :invitation_sent_at
