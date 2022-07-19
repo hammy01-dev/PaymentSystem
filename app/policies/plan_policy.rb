@@ -5,11 +5,10 @@ class PlanPolicy < ApplicationPolicy
     def resolve
       scope
     end
-
   end
 
   def index?
-    user.admin?
+    user.admin? || user.buyer?
   end
 
   def new?
@@ -20,5 +19,7 @@ class PlanPolicy < ApplicationPolicy
     user.admin?
   end
 
-
+  def create
+    user.admin?
+  end
 end

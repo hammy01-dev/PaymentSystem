@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(subscription_params)
     @subscription.user_id = current_user.id
     @subscription.save!
-   
+
     redirect_to plans_url
   end
 

@@ -1,4 +1,10 @@
-                <div class="col-md-3 col-sm-6">
+
+
+
+                <%= link_to plan_features_path(plan), :class=>'features'  do%>
+
+
+                <div class="col-md-3 col-sm-6 mt-4">
                     <div class="pricingTable blue">
                         <div class="pricingTable-header">
                             <span class="heading">
@@ -13,11 +19,16 @@
                             </ul>
                         </div><!-- /  CONTENT BOX-->
                         <div class="pricingTable-sign-up">
+                        <%if admin?%>
+                            <%= link_to 'Add Feature', new_plan_feature_path(plan), method: :get ,:class => "btn btn-block"%>
+                            <%#= link_to 'Subscribe', plan_subscriptions_path(plan), method: :post, remote:true ,:class => "btn btn-block"%>
+                        <% else %>
                             <%= link_to 'Subscribe', plan_subscriptions_path(plan), method: :post, remote:true ,:class => "btn btn-block"%>
+                        <% end %>
                         </div><!-- BUTTON BOX-->
                     </div>
                 </div>
-
+            <% end %>
 
 
 

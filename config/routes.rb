@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :features, only: %i[update destroy edit]
   resources :usages
-  get 'user/:id/plans/', to: 'usages#plan'
+  get 'usages/user/:id/plans', to: 'usages#plan'
+  get 'usages/user/:id/features', to: 'usages#features'
 end

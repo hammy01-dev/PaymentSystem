@@ -10,7 +10,6 @@ class FeaturesController < ApplicationController
   def new
     @plan = Plan.find(params[:plan_id])
     @features = Feature.new
-    authorize @features
   end
 
   def create
@@ -34,19 +33,17 @@ class FeaturesController < ApplicationController
 
   def destroy
     @feature = Feature.find(params[:id])
-    @feature.destroy
+    plan_features_path(params[:id]) if @feature.destroy!
+    redirect_to plan_features_path(params[:id])
   end
 
   def auth
     authorize Feature
-
   end
 
   private
 
   def feature_params
-    p params
     p params.require(:feature).permit(:code, :description, :name, :unit_price, :max_unit_limit)
   end
-
 end

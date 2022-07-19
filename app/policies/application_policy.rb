@@ -17,7 +17,7 @@ class ApplicationPolicy
   end
 
   def create?
-    true
+    false
   end
 
   def new?
@@ -51,7 +51,5 @@ class ApplicationPolicy
     def resolve
       scope
     end
-
   end
-  
 end

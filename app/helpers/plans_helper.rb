@@ -8,4 +8,8 @@ module PlansHelper
       flash.now[:notice] = 'No picture found'
     end
   end
+
+  def admin?
+    current_user.admin?
+  end
 end

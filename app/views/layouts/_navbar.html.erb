@@ -1,15 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
-  <a class="navbar-brand" href="#">Payment System</a>
+  <%= link_to 'Payment System' ,root_path,:class=>"navbar-brand"  %>
+  <%# <a class="navbar-brand" href="#">Pay  ment System</a> %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <%= link_to "ADD New Plan", new_plan_path ,:class=>"nav-link"%> <span class="sr-only">(current)</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <%= link_to "New Usage", new_usage_path ,:class=>"nav-link"%> <span class="sr-only">(current)</span>
+      </li>
+      <li class="nav-item">
+        <%= current_user.admin?%></span>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>

@@ -8,7 +8,7 @@ class FeaturePolicy < ApplicationPolicy
   end
 
   def index?
-    user.admin?
+    user.admin? || user.buyer?
   end
 
   def new?
@@ -16,7 +16,18 @@ class FeaturePolicy < ApplicationPolicy
   end
 
   def show?
+    user.admin? || user.buyer?
+  end
+
+  def edit?
     user.admin?
   end
 
+  def destroy?
+    user.admin?
+  end
+
+  def create?
+    user.admin?
+  end
 end
