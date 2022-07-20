@@ -2,12 +2,12 @@
 <%= form_with model:Plan.new do |f|%>
 
   <%= f.label :name %>
-  <%= f.text_field :name%>
+  <%= f.text_field :name , required: true%>
 
 
   <%= f.label :monthly_fee %>
-  <%= f.text_field :monthly_fee%>
-  <%= f.file_field :images , multiple: false%>
+  <%= f.text_field :monthly_fee, required: true%>
+  <%# <%= f.file_field :images , multiple: false%> %>
 
   <div>
     <%= f.submit %>

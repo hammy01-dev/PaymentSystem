@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_19_193653) do
+ActiveRecord::Schema.define(version: 2022_07_16_195800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 2022_07_19_193653) do
   end
 
   create_table "features", force: :cascade do |t|
-    t.decimal "max_unit_limit"
-    t.decimal "unit_price"
-    t.string "name"
-    t.string "code"
+    t.integer "max_unit_limit", null: false
+    t.integer "unit_price", null: false
+    t.string "name", null: false
+    t.integer "code", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "plan_id"
@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 2022_07_19_193653) do
   end
 
   create_table "plans", force: :cascade do |t|
-    t.string "name"
-    t.decimal "monthly_fee"
+    t.string "name", null: false
+    t.integer "monthly_fee", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_193653) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.integer "amount"
+    t.integer "amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "subscription_id"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_193653) do
   end
 
   create_table "usages", force: :cascade do |t|
-    t.decimal "usage"
+    t.integer "usage", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "subscription_id"

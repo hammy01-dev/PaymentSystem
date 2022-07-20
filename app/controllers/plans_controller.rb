@@ -2,6 +2,7 @@
 
 class PlansController < ApplicationController
   before_action :authenticate_user!, :auth
+
   def index
     @plans = Plan.where.not(id: Subscription.current_users(current_user.id).pluck(:plan_id))
     @plans.preload(:features)
@@ -9,13 +10,12 @@ class PlansController < ApplicationController
 
   def new
     @plan = Plan.new
-    authorize @plan
   end
 
   def create
     @plan = Plan.new(plan_params)
     @plan.image.attach(params[:plan][:images])
-    @plan.save!
+    @plan.save
 
     if @plan.valid?
       redirect_to root_path
@@ -23,7 +23,6 @@ class PlansController < ApplicationController
     else
       flash[:errors] = @plan.errors.full_messages
     end
-
   end
 
   private
@@ -34,5 +33,9 @@ class PlansController < ApplicationController
 
   def auth
     authorize Plan
+  end
+
+  def charges
+    redirect_to new_charges_path
   end
 end

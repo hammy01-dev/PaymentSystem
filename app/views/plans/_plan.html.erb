@@ -23,7 +23,9 @@
                             <%= link_to 'Add Feature', new_plan_feature_path(plan), method: :get ,:class => "btn btn-block"%>
                             <%#= link_to 'Subscribe', plan_subscriptions_path(plan), method: :post, remote:true ,:class => "btn btn-block"%>
                         <% else %>
-                            <%= link_to 'Subscribe', plan_subscriptions_path(plan), method: :post, remote:true ,:class => "btn btn-block"%>
+                            <%#= link_to 'Subscribe', plan_subscriptions_path(plan), method: :post, remote:true ,:class => "btn btn-block"%>
+                            <%#= link_to 'Subscribe', plan_subscriptions_path(plan), method: :post, remote:true ,:class => "btn btn-block"%>
+                            <%= link_to 'Subscribe', new_plan_charges_url(plan), method: :get,:class => "btn btn-block"%>
                         <% end %>
                         </div><!-- BUTTON BOX-->
                     </div>

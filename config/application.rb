@@ -11,5 +11,7 @@ Bundler.require(*Rails.groups)
 module PaymentSystem
   class Application < Rails::Application
     config.load_defaults 5.2
+
+    config.eager_load_paths << Rails.root.join('lib')
   end
 end

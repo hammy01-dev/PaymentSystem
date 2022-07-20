@@ -6,17 +6,21 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
+    <% if admin? %>
       <li class="nav-item ">
         <%= link_to "ADD New Plan", new_plan_path ,:class=>"nav-link"%> <span class="sr-only">(current)</span>
       </li>
       <li class="nav-item">
         <%= link_to "New Usage", new_usage_path ,:class=>"nav-link"%> <span class="sr-only">(current)</span>
       </li>
+
       <li class="nav-item">
-        <%= current_user.admin?%></span>
+
+        <%= link_to "New Invitation", new_user_invitation_path ,:class=>"nav-link"%> <span class="sr-only">(current)</span>
       </li>
+      <% end %>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <%= link_to "Sign Out", destroy_user_session_url ,:class=>"nav-link", method: :delete%> <span class="sr-only">(current)</span>
       </li>
     </ul>
   </div>
