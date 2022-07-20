@@ -18,12 +18,12 @@ class PlansController < ApplicationController
     @plan.save!
 
     if @plan.valid?
-
       redirect_to root_path
-    else
 
+    else
       flash[:errors] = @plan.errors.full_messages
     end
+
   end
 
   private

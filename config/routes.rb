@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :usages
   get 'usages/user/:id/plans', to: 'usages#plan'
   get 'usages/user/:id/features', to: 'usages#features'
+  get 'transactions', to:'transactions#abc'
 end

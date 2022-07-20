@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_16_195800) do
+ActiveRecord::Schema.define(version: 2022_07_19_193653) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -34,37 +37,47 @@ ActiveRecord::Schema.define(version: 2022_07_16_195800) do
   end
 
   create_table "features", force: :cascade do |t|
-    t.string "max_unit_limit"
-    t.string "unit_price"
+    t.decimal "max_unit_limit"
+    t.decimal "unit_price"
     t.string "name"
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "plan_id"
+    t.bigint "plan_id"
     t.index ["plan_id"], name: "index_features_on_plan_id"
   end
 
   create_table "plans", force: :cascade do |t|
     t.string "name"
-    t.string "monthly_fee"
+    t.decimal "monthly_fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "billing_date", default: -> { "CURRENT_DATE" }
+    t.bigint "user_id"
+    t.bigint "plan_id"
+    t.index ["plan_id"], name: "index_subscriptions_on_plan_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "transactions", force: :cascade do |t|
     t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscription_id"
+    t.bigint "subscription_id"
     t.index ["subscription_id"], name: "index_transactions_on_subscription_id"
   end
 
   create_table "usages", force: :cascade do |t|
-    t.integer "usage"
+    t.decimal "usage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "subscription_id"
-    t.integer "feature_id"
+    t.bigint "subscription_id"
+    t.bigint "feature_id"
     t.index ["feature_id"], name: "index_usages_on_feature_id"
     t.index ["subscription_id"], name: "index_usages_on_subscription_id"
   end
@@ -90,4 +103,11 @@ ActiveRecord::Schema.define(version: 2022_07_16_195800) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "features", "plans"
+  add_foreign_key "subscriptions", "plans"
+  add_foreign_key "subscriptions", "users"
+  add_foreign_key "transactions", "subscriptions"
+  add_foreign_key "usages", "features"
+  add_foreign_key "usages", "subscriptions"
 end
