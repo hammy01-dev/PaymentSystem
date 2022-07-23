@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Subscription < ApplicationRecord
-  before_save :load_user
+  # before_save :load_user
   scope :current_users, ->(user_id) { where(user_id: user_id) }
   scope :subscribed_users, -> { group(:user_id).pluck(:user_id) }
   scope :subs, lambda {
@@ -12,6 +12,7 @@ class Subscription < ApplicationRecord
   has_many :usages
 
   def load_user
+    p 'we are in before save'
 
     self.user_id = LoadUser.user
 

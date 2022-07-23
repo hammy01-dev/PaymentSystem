@@ -6,6 +6,10 @@
 
   <% if f.object.class.require_password_on_accepting %>
     <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name%>
+  </div>
+    <div class="field">
       <%= f.label :password %><br />
       <%= f.password_field :password %>
     </div>
@@ -14,8 +18,8 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation %>
     </div>
-
   <% end %>
+  <%= f.file_field :images , multiple: false%>
 
   <div class="actions">
     <%= f.submit t("devise.invitations.edit.submit_button") %>

@@ -14,8 +14,8 @@
   </head>
 
   <body>
-  <% if user_signed_in? == true   %>
-  <%= render "layouts/navbar" %>
+  <% if user_signed_in? %>
+    <%= render "layouts/navbar" %>
   <%end %>
     <div class = "m-5 p-5">
     <%# <%= notice %>
