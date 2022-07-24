@@ -1,11 +1,11 @@
 # frozen_string_literal: true
+module Transactions
 
-class TransactionCreator
   def get_subscriptions
     # @subscription = Subscription.where("created_at <=? and created_at >=? ", Time.now - 2*60*60 ,Time.now-12*60*60).pluck(:id)
-    sql_statements
+    p sql_statements
 
-    @subscription = ActiveRecord::Base.connection.execute(@sql1).as_json
+    p @subscription = ActiveRecord::Base.connection.execute(@sql1).as_json
     fee(@subscription)
   end
 
@@ -35,9 +35,9 @@ class TransactionCreator
       from subscriptions as s, plans as p,users as u
       where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN
        (
-          SELECT  s.id
+          SELECT  s.plan_id
           FROM    subscriptions as s
-          Where created_at >=  NOW() - '1day'::INTERVAL
+          Where created_at <=  NOW() - '1day'::INTERVAL
       );
 
       DROP VIEW IF EXISTS feature;
@@ -50,4 +50,5 @@ class TransactionCreator
       from feature as f , subscribe as s
       where f.subscription_id = s.s_id"
   end
+
 end
