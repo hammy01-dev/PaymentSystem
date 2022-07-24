@@ -11,6 +11,14 @@ class PlanPolicy < ApplicationPolicy
     user.admin? || user.buyer?
   end
 
+  def edit?
+    user.admin?
+  end
+
+  def update?
+    edit?
+  end
+
   def new?
     user.admin?
   end
@@ -20,6 +28,10 @@ class PlanPolicy < ApplicationPolicy
   end
 
   def create?
+    user.admin?
+  end
+
+  def destroy?
     user.admin?
   end
 end

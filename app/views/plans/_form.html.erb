@@ -1,0 +1,26 @@
+
+<%= form_with model:plan do |f|%>
+
+  <% if plan.errors.any? %>
+    <ul>
+
+    <% plan.errors.messages.each do |message| %>
+      <li><%= message %></li>
+      <%byebug%>
+    <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name , required: true%>
+
+
+  <%= f.label :monthly_fee %>
+  <%= f.text_field :monthly_fee, required: true%>
+
+  <div>
+    <%= f.submit %>
+  </div>
+  <% end %>
+
+

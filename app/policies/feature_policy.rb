@@ -30,4 +30,9 @@ class FeaturePolicy < ApplicationPolicy
   def create?
     user.admin?
   end
+
+  def update?
+    edit?
+  end
+
 end

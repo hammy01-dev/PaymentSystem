@@ -7,9 +7,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :invitable
   enum role: { admin: 0, buyer: 1 }
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
   has_many :plan, through: :subscriptions
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
 
   def picture
 

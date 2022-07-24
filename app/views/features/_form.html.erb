@@ -1,5 +1,13 @@
-
 <%= form_with model:feature  do |form|%>
+  <% feat = feature.is_a?(Array) ? feature[1] : feature%>
+
+  <% if feat.errors.any? %>
+    <ul>
+    <% feat.errors.messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  <% end %>
   <div class="field form-group">
     <%= form.label :name %><br>
 
@@ -12,12 +20,12 @@
   </div>
   <div class="field form-group ">
     <%= form.label :unit_price %><br>
-    <%= form.text_field :unit_price %>
+    <%= form.text_field :unit_price ,required: true%>
   </div>
 
   <div>
     <%= form.label :max_unit_limit %><br>
-    <%= form.text_area :max_unit_limit %><br>
+    <%= form.text_area :max_unit_limit,required: true %><br>
   </div>
 
   <div>

@@ -8,5 +8,5 @@ class Feature < ApplicationRecord
 
 
   belongs_to :plan
-  has_many :usages
+  has_many :usages, dependent: :destroy
 end
