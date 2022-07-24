@@ -28,11 +28,9 @@ class FeaturesController < ApplicationController
   def show; end
 
   def edit
-    # @feature = Feature.find(params[:id])
   end
 
   def update
-    # @feature = Feature.find(params[:plan_id])
     if @feature.update(feature_params)
       flash[:notice] = 'Feature Updated Successfully'
       redirect_to plan_features_path(params[:id])
@@ -45,7 +43,7 @@ class FeaturesController < ApplicationController
   def destroy
     # @feature = Feature.find(params[:id])
     redirect_to plan_features_path(params[:plan_id]) if @feature.destroy!
-  
+
 
     # redirect_to plan_features_path(params[:id])
   end

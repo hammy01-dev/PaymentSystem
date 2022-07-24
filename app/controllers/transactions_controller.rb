@@ -8,7 +8,6 @@ class TransactionsController < ApplicationController
     data.each do |id, total|
       @user = User.find(id)
       InvoiceMailer.new_invoice(@user, total).deliver_now
-      byebug
-    end 
+    end
   end
 end
