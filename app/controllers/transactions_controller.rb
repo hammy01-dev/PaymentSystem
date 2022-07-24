@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-require "#{Rails.root}/app/services/transaction_creator"
+# require "#{Rails.root}/app/services/transaction_creator"
 class TransactionsController < ApplicationController
-  inculde Transactions
+  # inculde Transactions
   def abc
     # a = TransactionCreator.new
     data  = get_subscriptions
