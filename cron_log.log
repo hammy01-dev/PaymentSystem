@@ -5424,4 +5424,364 @@ something
 something
 "DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
 []
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
+{}pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+something
+something
+something
+something
+something
+"DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
+[]
 {}
