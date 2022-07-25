@@ -28,6 +28,4 @@ class SubscriptionsController < ApplicationController
   def set_amount
     @amount = Plan.find(params[:plan_id]).monthly_fee
   end
-
-
 end

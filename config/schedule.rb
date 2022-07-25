@@ -8,10 +8,9 @@
 # Example:
 #
 set :output, '/home/dev/Videos/PaymentSystem/cron_log.log'
-every 1.minute do
+every 10.minute do
   # command "/usr/bin/some_great_command"
   # runner "MyModel.some_method"
-  puts 'hello'
   rake 'charge'
 end
 #
