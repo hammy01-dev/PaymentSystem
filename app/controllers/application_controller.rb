@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # rubocop:disable Style/Documentation
 class ApplicationController < ActionController::Base
   include Pundit
@@ -21,6 +22,6 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password)}
-    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:image, :email, :password, :current_password)}
- end
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:image, :email, :password, :current_password) }
+  end
 end

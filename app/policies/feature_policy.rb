@@ -34,5 +34,4 @@ class FeaturePolicy < ApplicationPolicy
   def update?
     edit?
   end
-
 end

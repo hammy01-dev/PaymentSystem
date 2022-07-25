@@ -8,5 +8,4 @@ module ApplicationHelper
   def buyer?
     current_user.buyer?
   end
-  
 end

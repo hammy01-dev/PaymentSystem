@@ -9,13 +9,11 @@ class Subscription < ApplicationRecord
                }
   belongs_to :plan
   belongs_to :user
-  has_many :usages , dependent: :destroy
+  has_many :usages, dependent: :destroy
 
   def load_user
     p 'we are in before save'
 
     self.user_id = LoadUser.user
-
   end
-
 end

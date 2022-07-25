@@ -2,7 +2,7 @@
 
 class PlansController < ApplicationController
   before_action :authenticate_user!, :auth
-  before_action :set_plan, only: %i[edit update  destroy]
+  before_action :set_plan, only: %i[edit update destroy]
 
   def index
     @plans = Plan.where.not(id: Subscription.current_users(current_user.id).pluck(:plan_id))
@@ -13,20 +13,17 @@ class PlansController < ApplicationController
     @plan = Plan.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def destroy
-    if @plan.destroy
-      flash[:notice] = "sucessfully deleted the Plan"
+    flash[:notice] = if @plan.destroy
+                       'sucessfully deleted the Plan'
 
-      redirect_to root_path
-    else
-      flash[:notice] = "unableto  delete the Plan"
+                     else
+                       'unableto  delete the Plan'
 
-      redirect_to root_path
-    end
-
+                     end
+    redirect_to root_path
   end
 
   def create
@@ -50,7 +47,7 @@ class PlansController < ApplicationController
       redirect_to root_path
     else
 
-      flash.now[:notice] = "could not update the plan"
+      flash.now[:notice] = 'could not update the plan'
       render :edit
     end
   end
@@ -70,7 +67,6 @@ class PlansController < ApplicationController
   end
 
   def charges
-
     redirect_to new_charges_path
   end
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-module Transactions
 
+module Transactions
   def get_subscriptions
     # @subscription = Subscription.where("created_at <=? and created_at >=? ", Time.now - 2*60*60 ,Time.now-12*60*60).pluck(:id)
     p sql_statements
@@ -50,5 +50,4 @@ module Transactions
       from feature as f , subscribe as s
       where f.subscription_id = s.s_id"
   end
-
 end

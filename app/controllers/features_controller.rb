@@ -3,7 +3,7 @@
 class FeaturesController < ApplicationController
   before_action :auth
   before_action :set_feature, only: %i[edit destroy update]
-  before_action :set_plan , only: %i[index new create]
+  before_action :set_plan, only: %i[index new create]
 
   def index
     @feature = Feature.where(plan_id: params[:plan_id])
@@ -27,23 +27,20 @@ class FeaturesController < ApplicationController
 
   def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @feature.update(feature_params)
       flash[:notice] = 'Feature Updated Successfully'
       redirect_to plan_features_path(params[:id])
     else
-      flash[:alert] = "Feature could not be update"
+      flash[:alert] = 'Feature could not be update'
     end
-
   end
 
   def destroy
     # @feature = Feature.find(params[:id])
     redirect_to plan_features_path(params[:plan_id]) if @feature.destroy!
-
 
     # redirect_to plan_features_path(params[:id])
   end
@@ -53,6 +50,7 @@ class FeaturesController < ApplicationController
   end
 
   private
+
   def set_feature
     @feature = Feature.find(params[:id])
   end
