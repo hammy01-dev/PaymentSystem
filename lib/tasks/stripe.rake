@@ -6,5 +6,5 @@ task charge: :environment do
   # InvoiceMailer.new_invoice(current_user, 200).deliver_now
   # transaction = TransactionCreator.new
   # data = transaction.get_subscriptions
-  print get_subscriptions
+  get_subscriptions
 end
