@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     resource :charges ,only: [:create,:new]
   end
   resources :features, only: %i[update destroy edit]
-  # resource :charges, only: %i[create new]
   resources :usages
   get 'usages/user/:id/plans', to: 'usages#plan'
   get 'usages/user/:id/features', to: 'usages#features'

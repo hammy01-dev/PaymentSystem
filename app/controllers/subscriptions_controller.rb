@@ -1,25 +1,29 @@
 # frozen_string_literal: true
 
 class SubscriptionsController < ApplicationController
-  before_action :charges, only: %i[create]
+  before_action :set_amount, only: %i[create]
+  before_action :set_amount,  only: %i[create]
 
   def create
-   
-    @subscription = Subscription.new(subscription_params)
-    @subscription.user_id = current_user.id
-    @subscription.save
-
+    if current_user.not_verified?
+      redirect_to new_plan_charges_url
+    else
+    subscription_params
+    transaction = TransactionService.new(@subscription_params,@amount)
+    p 'this is return ',return1 = transaction.custom_transaction
     redirect_to plans_url
+    end
   end
 
   private
 
   def subscription_params
-    { plan_id: params[:plan_id] }
+    @subscription_params = { plan_id: params[:plan_id], user_id: current_user.id }
   end
 
-  def charges
-    # redirect_to controller: 'charges', action: 'new', plan_id:params[:plan_id]
-    redirect_to new_plan_charges_url and return
+  def set_amount
+    @amount = Plan.find(params[:plan_id]).monthly_fee
+
+
   end
 end

@@ -1,16 +1,13 @@
 
-// $(document).ready()
 
 $(document).on('change','#usage_user_id', function () {//change majors when user changes school
   load_plans_of_users_dropdown();
+
 });
 
-// $(document).ready(load_plans_of_users_dropdown);//populate majors when page loads with first school
 
 
 function load_plans_of_users_dropdown(){
-    // var request = "/plans/find_majors_given_school_id?school_id=" //access controller of interest
-    //     + $('#school_id_select').val();
 
     var request = "user/"+$('#usage_user_id').val()+"/plans"
     console.log(request)
@@ -37,6 +34,7 @@ function change_plans(data) {
             $("<option></option>").attr("value", data[i].id).text(data[i].name)
         );
     }
+    load_features_of_plans_dropdown()
 }
 
 

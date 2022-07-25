@@ -5,7 +5,6 @@ class Users::InvitationsController < Devise::InvitationsController
   protected
 
     def configure_permitted_parameters
-      byebug
       devise_parameter_sanitizer.permit(:accept_invitation, keys: [:name, :email, :password,:image])
       # devise_parameter_sanitizer.permit(:accept_invitation, keys: [:name, :email, :password,:image])
     end

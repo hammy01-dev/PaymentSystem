@@ -6,38 +6,30 @@ class ChargesController < ApplicationController
 
 
   def create
-    customer = Stripe::Customer.create(
+    p customer = Stripe::Customer.create(
       email: params[:stripeEmail],
-      source:"tok_1LOxDGFJ1WA9H4gSLVBTlgTZ"
+      source:params[:stripe]
   )
-    charge = p Stripe::Charge.create(
+    p charge = Stripe::Charge.create(
       customer: customer.id,
       amount: @amount.to_i,
       description: 'Rails Stripe customer',
       currency: 'usd'
     )
-    # intent = Stripe::PaymentIntent.create({
-    #   customer: customer.id,
-    #   setup_future_usage: 'off_session',
-    #   amount: 1099,
-    #   currency: 'eur',
-    #   automatic_payment_methods: {
-    #     enabled: true,
-    #   },
-    # })
-
     if charge.id
       transaction
+      User.update(:token=>customer.id)
       InvoiceMailer.new_invoice(current_user, @amount).deliver_now
     end
     rescue Stripe::CardError => e
+      p e
       flash[:error] = e.message
-      redirect_to new_charges_path
+      redirect_to root_path
 
     rescue Stripe::APIError => e
+      p e
       flash[:notice] = e.message
-      byebug
-      redirect_to plans_url
+      redirect_to root_path
 
   end
 
@@ -45,12 +37,8 @@ class ChargesController < ApplicationController
   def transaction
     ActiveRecord::Base.transaction do
       p @subscription  = Subscription.new(subscription_params)
-      byebug
       @subscription.user_id = current_user.id
       p @subscription.save!
-
-
-
       Transaction.create!({:subscription_id=>@subscription.id,:amount=>@amount})
     end
 
