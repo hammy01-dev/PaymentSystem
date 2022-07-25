@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'plans#index'
   resources :plans, only: %i[index create new update destroy edit] do
     resources :features, only: %i[index create new]
-    resource :subscriptions, only: [:create :show]
+    resource :subscriptions, only: [:create, :show]
     resource :charges ,only: [:create,:new]
   end
   resources :features, only: %i[update destroy edit]

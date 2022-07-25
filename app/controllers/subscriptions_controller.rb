@@ -15,6 +15,10 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def show
+    @subscription = Subscription.preload(:plan)
+  end
+
   private
 
   def subscription_params
@@ -25,5 +29,5 @@ class SubscriptionsController < ApplicationController
     @amount = Plan.find(params[:plan_id]).monthly_fee
   end
 
-  def show; end
+
 end
