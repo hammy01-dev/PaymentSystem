@@ -18,7 +18,7 @@
   <div class="field form-group ">
     <%= form.label :user %><br>
     <%#= form.select :user, @user.collect{|u| u.email}, selected: 'Bug' %>
-    <%= form.collection_select(:user_id, @user, :id, :email) %>
+    <%= form.collection_select(:user_id, @user, :id, :name) %>
   </div>
 
   <div class="field form-group ">

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   # include LoadUser
   before_action :load_user
   rescue_from Pundit::NotAuthorizedError, with: :authorization_error
-
+  rescue_from ActionController::RoutingError, with: -> { content_not_found }
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private

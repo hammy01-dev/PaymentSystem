@@ -11,7 +11,6 @@
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          Stripe.setPublishableKey('PUBLISHABLE_KEY');
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
           data-amount=@amount
