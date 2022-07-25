@@ -16,13 +16,12 @@ class ChargesController < ApplicationController
       description: 'Rails Stripe customer',
       currency: 'usd'
     )
-    if charge.id
+    if customer.id
       transaction
       User.update(:token=>customer.id)
       InvoiceMailer.new_invoice(current_user, @amount).deliver_now
     end
     rescue Stripe::CardError => e
-      p e
       flash[:error] = e.message
       redirect_to root_path
 
