@@ -41,15 +41,14 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   config.log_formatter = ::Logger::Formatter.new
-  config.action_mailer.default_url_options = { host: 'https://payment-system02.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'payment-system02.herokuapp.com',protocol:'https' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
-
-    user_name: Rails.application.credentials.smtp[:user_name],
-    password: Rails.application.credentials.smtp[:password],
+    user_name: Rails.application.credentials.dig(:smtp, :user_name),
+    password: Rails.application.credentials.dig(:smtp, :password),
     authentication: 'plain',
     enable_starttls_auto: true
     # open_timeout:         5,

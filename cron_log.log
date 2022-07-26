@@ -118,4 +118,166 @@ something
 something
 "DROP VIEW IF EXISTS subscribe;\n      CREATE VIEW subscribe AS\n      select s.user_id, p.monthly_fee, s.id as s_id, p.id as plan_id,u.email,p.name as plan_name\n      from subscriptions as s, plans as p,users as u\n      where s.plan_id = p.id and u.id=s.user_id and s.plan_id IN\n       (\n          SELECT  s.plan_id\n          FROM    subscriptions as s\n          Where created_at <=  NOW() - '1day'::INTERVAL\n      );\n\n      DROP VIEW IF EXISTS feature;\n      CREATE VIEW feature AS\n      select u.subscription_id, f.unit_price, u.usage,f.name,f.max_unit_limit, f.id as feature_id\n      from usages as u , features as f\n      where u.feature_id = f.id;\n\n      select *\n      from feature as f , subscribe as s\n      where f.subscription_id = s.s_id"
 []
-{}
+{}rake aborted!
+NameError: undefined local variable or method `config' for main:Object
+/home/dev/Videos/PaymentSystem/config/environment.rb:8:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:337:in `require_environment!'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:520:in `block in run_tasks_blocks'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `eval'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `<main>'
+Tasks: TOP => charge => environment
+(See full trace by running task with --trace)
+pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+rake aborted!
+NameError: undefined local variable or method `config' for main:Object
+/home/dev/Videos/PaymentSystem/config/environment.rb:8:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:337:in `require_environment!'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:520:in `block in run_tasks_blocks'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `eval'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `<main>'
+Tasks: TOP => charge => environment
+(See full trace by running task with --trace)
+pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+rake aborted!
+NameError: undefined local variable or method `config' for main:Object
+/home/dev/Videos/PaymentSystem/config/environment.rb:8:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:337:in `require_environment!'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:520:in `block in run_tasks_blocks'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `eval'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `<main>'
+Tasks: TOP => charge => environment
+(See full trace by running task with --trace)
+pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+rake aborted!
+NameError: undefined local variable or method `config' for main:Object
+/home/dev/Videos/PaymentSystem/config/environment.rb:8:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:337:in `require_environment!'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:520:in `block in run_tasks_blocks'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `eval'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `<main>'
+Tasks: TOP => charge => environment
+(See full trace by running task with --trace)
+pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+rake aborted!
+NameError: undefined local variable or method `config' for main:Object
+/home/dev/Videos/PaymentSystem/config/environment.rb:8:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:337:in `require_environment!'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:520:in `block in run_tasks_blocks'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `eval'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `<main>'
+Tasks: TOP => charge => environment
+(See full trace by running task with --trace)
+pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+rake aborted!
+NameError: undefined local variable or method `config' for main:Object
+/home/dev/Videos/PaymentSystem/config/environment.rb:8:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:337:in `require_environment!'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:520:in `block in run_tasks_blocks'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `eval'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `<main>'
+Tasks: TOP => charge => environment
+(See full trace by running task with --trace)
+pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+rake aborted!
+NameError: undefined local variable or method `config' for main:Object
+/home/dev/Videos/PaymentSystem/config/environment.rb:8:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:337:in `require_environment!'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:520:in `block in run_tasks_blocks'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `eval'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `<main>'
+Tasks: TOP => charge => environment
+(See full trace by running task with --trace)
+pk_test_51LNcMwFJ1WA9H4gSGfyWJlm2kn27XqZncMQuUrCe5jczzRHzCV7LAPvGSDFfjs6vqVRV2lBdFNaxBUoaL2tWQkkL001xmPca5I
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+sk_test_51LNcMwFJ1WA9H4gSzxTk0OC98pS48abPZ8zpCg9M7ag5UsqFoso7tteaWPGoNoPRWfCxPoB8RRrIcgN15BZkbNSX00KzGRCIXt
+rake aborted!
+ArgumentError: wrong number of arguments (given 0, expected 1+)
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/core_ext/module/delegation.rb:272:in `dig'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/core_ext/module/delegation.rb:272:in `public_send'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/core_ext/module/delegation.rb:272:in `method_missing'
+/home/dev/Videos/PaymentSystem/config/environments/production.rb:52:in `block in <main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/railtie.rb:216:in `instance_eval'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/railtie.rb:216:in `configure'
+/home/dev/Videos/PaymentSystem/config/environments/production.rb:3:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/engine.rb:608:in `block (2 levels) in <class:Engine>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/engine.rb:607:in `each'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/engine.rb:607:in `block in <class:Engine>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/initializable.rb:32:in `instance_exec'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/initializable.rb:32:in `run'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/initializable.rb:61:in `block in run_initializers'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/initializable.rb:50:in `each'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/initializable.rb:50:in `tsort_each_child'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/initializable.rb:60:in `run_initializers'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:361:in `initialize!'
+/home/dev/Videos/PaymentSystem/config/environment.rb:7:in `<main>'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/bootsnap-1.12.0/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `block in require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:257:in `load_dependency'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/activesupport-5.2.8.1/lib/active_support/dependencies.rb:291:in `require'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:337:in `require_environment!'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/railties-5.2.8.1/lib/rails/application.rb:520:in `block in run_tasks_blocks'
+/home/dev/.rvm/gems/ruby-2.7.6/gems/rake-13.0.6/exe/rake:27:in `<top (required)>'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `eval'
+/home/dev/.rvm/gems/ruby-2.7.6/bin/ruby_executable_hooks:22:in `<main>'
+Tasks: TOP => charge => environment
+(See full trace by running task with --trace)

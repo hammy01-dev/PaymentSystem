@@ -5,4 +5,4 @@ require_relative 'application'
 
 # Initialize the Rails application.
 Rails.application.initialize!
-config.action_mailer.default_url_options = { host: 'https://payment-system02.herokuapp.com/' }
+# config.action_mailer.default_url_options = { host: 'https://payment-system02.herokuapp.com/' }
