@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class ChargesController < ApplicationController
-  before_action :subscription_params
-  before_action :load_plans
-
+  before_action :subscription_params, :load_plans
   def create
     stripe = StripeService.new(@subscription_params)
     stripe.pay(params[:stripeEmail], params[:stripeToken], @amount.to_i)

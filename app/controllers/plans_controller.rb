@@ -13,14 +13,12 @@ class PlansController < ApplicationController
     @plan = Plan.new
   end
 
-  def edit; end
-
   def destroy
     flash[:notice] = if @plan.destroy
                        'sucessfully deleted the Plan'
 
                      else
-                       'unableto  delete the Plan'
+                       'unable to  delete the Plan'
 
                      end
     redirect_to root_path
@@ -28,9 +26,8 @@ class PlansController < ApplicationController
 
   def create
     @plan = Plan.new(plan_params)
-    @plan.save
 
-    if @plan.valid?
+    if @plan.valid? && @plan.save
 
       redirect_to root_path
     else

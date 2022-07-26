@@ -25,10 +25,6 @@ class FeaturesController < ApplicationController
     end
   end
 
-  def show; end
-
-  def edit; end
-
   def update
     if @feature.update(feature_params)
       flash[:notice] = 'Feature Updated Successfully'
@@ -39,7 +35,7 @@ class FeaturesController < ApplicationController
   end
 
   def destroy
-    redirect_to plan_features_path(params[:plan_id]) if @feature.destroy!
+    redirect_to plan_features_path(params[:plan_id]) if @feature.destroy
   end
 
   def auth
@@ -57,6 +53,6 @@ class FeaturesController < ApplicationController
   end
 
   def feature_params
-    p params.require(:feature).permit(:code, :description, :name, :unit_price, :max_unit_limit)
+    params.require(:feature).permit(:code, :description, :name, :unit_price, :max_unit_limit)
   end
 end

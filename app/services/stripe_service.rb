@@ -20,15 +20,13 @@ class StripeService
     )
     byebug
     if charge.id
-      p 'we are in if '
-      p transaction
-      p User.update(stripe_token: customer.id, paymet_verified: 1)
-      p InvoiceMailer.new_invoice(current_user, @amount).deliver_now
+      transaction
+      User.update(stripe_token: customer.id, paymet_verified: 1)
+      # p InvoiceMailer.new_invoice(current_user, @amount).deliver_now
     else
       p 'we are in else'
       redirect_to root_path
     end
-    byebug
   rescue Stripe::CardError => e
     p e
     flash[:error] = e.message
@@ -41,12 +39,11 @@ class StripeService
 
   def transaction
     ActiveRecord::Base.transaction do
-      p @subscription = Subscription.new(@subscription_params)
-      # @subscription.user_id = current_user.id
-      p @subscription.save!
-      Transaction.create!({ subscription_id: @subscription.id, amount: @amount })
+      @subscription = Subscription.new(@subscription_params)
+      @subscription.save
+      Transaction.create({ subscription_id: @subscription.id, amount: @amount })
     end
   rescue ActiveRecord::RecordInvalid
-    puts 'Oops. We tried to do an invalid operation!'
+    'Oops. We tried to do an invalid operation!'
   end
 end

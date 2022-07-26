@@ -8,9 +8,9 @@ class TransactionService
 
   def custom_transaction
     ActiveRecord::Base.transaction do
-      p @subscription = Subscription.new(@subscription_params)
-      @subscription.save!
-      Transaction.create!({ subscription_id: @subscription.id, amount: @amount })
+      @subscription = Subscription.new(@subscription_params)
+      @subscription.save
+      Transaction.create({ subscription_id: @subscription.id, amount: @amount })
     end
   rescue ActiveRecord::RecordInvalid
     puts 'Oops. We tried to do an invalid operation!'

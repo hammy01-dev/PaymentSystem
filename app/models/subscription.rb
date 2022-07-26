@@ -8,7 +8,7 @@ class Subscription < ApplicationRecord
                }
   scope :get, lambda { |usage_params|
   where(plan_id: usage_params[:plan_id],
-        user_id: usage_params[:user_id]).pluck(:id)[0]
+        user_id: usage_params[:user_id]).pluck(:id).first
 }
 
   belongs_to :plan
