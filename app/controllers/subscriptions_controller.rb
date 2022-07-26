@@ -1,22 +1,17 @@
 # frozen_string_literal: true
 
 class SubscriptionsController < ApplicationController
-  before_action :set_amount, only: %i[create]
+  before_action :subscription_params, only: %i[create]
   before_action :set_amount, only: %i[create]
 
   def create
     if current_user.not_verified?
       redirect_to new_plan_charges_url
     else
-      subscription_params
       transaction = TransactionService.new(@subscription_params, @amount)
-      p 'this is return ', return1 = transaction.custom_transaction
+      transaction.custom_transaction
       redirect_to plans_url
     end
-  end
-
-  def show
-    @subscription = Subscription.preload(:plan)
   end
 
   private

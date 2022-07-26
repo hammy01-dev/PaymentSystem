@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 class UsagesController < ApplicationController
-
   def index
-    usage = TransactionService.new(1,2)
+    usage = TransactionService.new(1, 2)
     @usages = usage.execute
-
   end
 
   def new
@@ -27,13 +25,10 @@ class UsagesController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.where(plan_id: usage_params[:plan_id],
-                                       user_id: usage_params[:user_id]).pluck(:id)[0]
+    @subscription = Subscription.get(usage_params)
     @usage = Usage.new({ subscription_id: @subscription, feature_id: usage_params[:feature_id],
                          usage: usage_params[:usage] })
-    @usage
-
-    if @usage.save!
+    if @usage.save
       flash[:notice] = 'saved sucsessfully'
       redirect_to new_usage_path
     end

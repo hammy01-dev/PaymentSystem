@@ -8,7 +8,7 @@ class CreateUsages < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_reference :usages, :subscription, foreign_key: true, index: true
-    add_reference :usages, :feature, foreign_key: true, index: true
+    add_reference :usages, :subscription, foreign_key: true, index: true, null: false
+    add_reference :usages, :feature, foreign_key: true, index: true, null: false
   end
 end

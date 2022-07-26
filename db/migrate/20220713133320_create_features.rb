@@ -10,6 +10,6 @@ class CreateFeatures < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_reference :features, :plan, foreign_key: true, index: true
+    add_reference :features, :plan, foreign_key: true, index: true, null: false
   end
 end

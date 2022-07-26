@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Style/Documentation
 class ApplicationController < ActionController::Base
   include Pundit
   # include LoadUser
