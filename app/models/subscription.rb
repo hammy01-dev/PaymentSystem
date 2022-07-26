@@ -7,6 +7,7 @@ class Subscription < ApplicationRecord
   scope :subs, lambda {
                  where('created_at <=? and created_at >=? ', Time.now - 0.5 * 60 * 60, Time.now - 12 * 60 * 60).pluck(:id)
                }
+
   belongs_to :plan
   belongs_to :user
   has_many :usages, dependent: :destroy
