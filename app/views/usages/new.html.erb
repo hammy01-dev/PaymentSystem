@@ -1,55 +1,37 @@
-<% # @user%>
-<%#= render "form" ,usage:@usage %>
 <h2>Usage</h2>
 
 <%= form_with model:@usage do |form| %>
-
   <% if @usage.errors.any? %>
     <ul>
-    <% @usage.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
+      <% @usage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
     </ul>
   <% end %>
 
-
-
-
   <div class="field form-group ">
     <%= form.label :user %><br>
-    <%#= form.select :user, @user.collect{|u| u.email}, selected: 'Bug' %>
     <%= form.collection_select(:user_id, @user, :id, :name) %>
   </div>
 
   <div class="field form-group ">
     <%= form.label :plan %><br>
-    <%# <%= form.select :plan, [@user.first.plan.name], selected: 'new' %>
     <%= form.collection_select(:plan_id, @plan, :id, :name) %>
   </div>
 
   <div class="field form-group ">
     <%= form.label :feature %><br>
-    <%#= form.select :feature, [@user.first.email, 'Started' , 'Resolved'], selected: 'new' %>
     <%= form.collection_select(:feature_id, @features, :id, :name) %>
   </div>
-
 
   <div class="field form-group" >
     <%= form.label :units %><br>
     <%= form.number_field :usage, in: 1..200, step: 1.0 %>
   </div>
 
-
-
   <div class="actions">
     <%= form.submit "Enter", class: "btn btn-secondary" %>
   </div>
-  <div>
-
-  </div>
-
 <% end %>
 
 <br/>
-
-

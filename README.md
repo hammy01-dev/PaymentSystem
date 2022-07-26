@@ -23,7 +23,7 @@ In this project we build a Recurring Payment System based on the users subscribe
 
 ## Tech
 
-Dillinger uses a number of open source projects to work properly:
+We used the following Tech to Build Payment System
 
 - RubyOnRails - For habdling MVC!
 - VS Code Editor - awesome web-based text editor
@@ -35,22 +35,22 @@ Dillinger uses a number of open source projects to work properly:
 
 
 ## Models
-- User has buyers and one admin
-- Plans has plans created by admins
-- Subscriptions store which buyer has subscribed to whcih plan and stores billing date
-- Features have features associated to plans
-- Usage has the record of usages of features of particular subscriptions
-- Transactions record all the transactions of particular subscriptions and their usages.
+- User model two types which are buyers and admin
+- Plans have plans created by admins
+- Subscriptions store which buyer has subscribed to whcih plan and stores the billing date
+- Features, Plans can have many features
+- Usage has the record of usages of features of particular subscriptions by particluar user.
+- Transactions record all the transactions of particular subscriptions and their amount.
 
 ## Installation
 
 - Use Git clone to clone the repository to the local machine
 - bundle install
--    Use rake db/setup to create db and seed add into it
+-    Use rake db/setup to create and seed the data
  -   Start server using rails s
- -   Run loaclhost:3000
+ -  Enter loaclhost:3000 on browser
  -   Login as a admin, You can invite others as buyers to your application
+ -   You can create/edit/delete Plans, features, and Add New usages for particular buyers
  -   Login as Buyer, Subscribe to Plans
  -   Add stripe card details to subscribe to a plan
-whatever port was exposed in the Dockerfile):
 

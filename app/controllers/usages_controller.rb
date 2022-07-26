@@ -9,14 +9,14 @@ class UsagesController < ApplicationController
   def new
     @usage = Usage.new
     @user = User.find(Subscription.subscribed_users)
-    @plan = @user.first.plan - Plan.with_no_features
+    @plan = @user.first.plans
 
-    @features = @plan.first.features if @plan[0]
+    @features = @plan.first.features if @plan.first
   end
 
   def plan
-    plan = Plan.with_no_features
-    @plan = User.find(params[:id].to_i).plan - plan
+    @plan = User.find(params[:id].to_i).plans
+
     respond_to do |format|
       format.json do
         render json: @plan
@@ -31,6 +31,9 @@ class UsagesController < ApplicationController
     if @usage.save
       flash[:notice] = 'saved sucsessfully'
       redirect_to new_usage_path
+    else
+      flash[:notice] = "couldn't saved sucsessfully"
+      redirect_to root_path
     end
   end
 
