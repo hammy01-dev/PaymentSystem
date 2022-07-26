@@ -28,7 +28,6 @@ class PlansController < ApplicationController
 
   def create
     @plan = Plan.new(plan_params)
-    # @plan.image.attach(params[:plan][:images])
     @plan.save
 
     if @plan.valid?
