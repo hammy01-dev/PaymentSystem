@@ -1,0 +1,31 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Limit</th>
+      <%if policy(@feature).edit?%>
+      <th scope="col">Actions</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+  <% @feature.each do |f|%>
+    <tr>
+      <td><%= f.name%></td>
+      <td><%= f.unit_price%></td>
+      <td><%= f.max_unit_limit%></td>
+      <%if policy(@feature).edit?%>
+      <td><%= link_to 'Edit', edit_feature_path(f) ,:class=>"btn btn-primary"%>
+          <%= link_to f, method: :delete, :class=>"btn btn-danger",
+          data: {confirm: "Are you sure you want to delete this Feature?"},
+          remote:true do %>
+          Delete
+          <% end %>
+      </td>
+      <% end %>
+    </tr>
+<% end %>
+  </tbody>
+</table>

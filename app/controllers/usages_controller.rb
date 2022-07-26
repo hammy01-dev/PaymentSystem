@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class UsagesController < ApplicationController
+
+  def index
+    usage = TransactionService.new(1,2)
+    @usages = usage.execute
+
+  end
+
   def new
     @usage = Usage.new
     @user = User.find(Subscription.subscribed_users)
@@ -25,6 +32,7 @@ class UsagesController < ApplicationController
     @usage = Usage.new({ subscription_id: @subscription, feature_id: usage_params[:feature_id],
                          usage: usage_params[:usage] })
     @usage
+
     if @usage.save!
       flash[:notice] = 'saved sucsessfully'
       redirect_to new_usage_path
@@ -32,8 +40,7 @@ class UsagesController < ApplicationController
   end
 
   def features
-    p 'thses are params', params[:id]
-    p @feature = Plan.find(params[:id].to_i).features.as_json
+    @feature = Plan.find(params[:id].to_i).features.as_json
 
     respond_to do |format|
       format.json do

@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Plan Name</th>
+      <th scope="col">Feature Name</th>
+      <th scope="col">Usage</th>
+      <th scope="col">Limit</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <% @usages.each do |u|%>
+    <tr>
+      <td><%= u["name"]%></td>
+      <td><%= u["plan_name"]%></td>
+      <td><%= u["feature_name"]%></td>
+      <td><%= u["usage"]%></td>
+      <td><%= u["max_unit_limit"]%></td>
+      </td>
+    </tr>
+      <% end %>
+
+  </tbody>
+</table>

@@ -39,7 +39,6 @@ class FeaturesController < ApplicationController
   end
 
   def destroy
-
     redirect_to plan_features_path(params[:plan_id]) if @feature.destroy!
   end
 
