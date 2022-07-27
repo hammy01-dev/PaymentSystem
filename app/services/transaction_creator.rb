@@ -6,7 +6,12 @@ module Transactions
     p sql_statements
 
     p @subscription = ActiveRecord::Base.connection.execute(@sql1).as_json
-    fee(@subscription)
+    @users = fee(@subscription)
+    if @users
+      @user.each do |key, value|
+        charge_for_service(key, value)
+      end
+    end
   end
 
   def fee(data)
@@ -49,5 +54,15 @@ module Transactions
       select *
       from feature as f , subscribe as s
       where f.subscription_id = s.s_id"
+  end
+
+  def charge_for_service(user_id, amount)
+    @user = User.find(user_id).pluck(:stripe_token).first
+    charge1 = Stripe::Charge.create(
+      customer: amount,
+      amount: 100,
+      description: 'Rails Stripe customer',
+      currency: 'usd'
+    )
   end
 end

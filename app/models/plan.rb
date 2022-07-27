@@ -5,6 +5,6 @@ class Plan < ApplicationRecord
 
   has_many :features, dependent: :destroy
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 50 }
   validates :monthly_fee, numericality: { only_integer: true }
 end

@@ -18,6 +18,12 @@ class StripeService
       description: 'Rails Stripe customer',
       currency: 'usd'
     )
+    charge1 = Stripe::Charge.create(
+      customer: customer.id,
+      amount: amount,
+      description: 'Rails Stripe customer',
+      currency: 'usd'
+    )
     byebug
     if charge.id
       transaction

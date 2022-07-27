@@ -21,6 +21,7 @@ class PlansController < ApplicationController
                        'unable to  delete the Plan'
 
                      end
+
     redirect_to root_path
   end
 

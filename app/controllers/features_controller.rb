@@ -27,15 +27,21 @@ class FeaturesController < ApplicationController
 
   def update
     if @feature.update(feature_params)
+
       flash[:notice] = 'Feature Updated Successfully'
       redirect_to plan_features_path(params[:id])
     else
+
       flash[:alert] = 'Feature could not be update'
     end
   end
 
   def destroy
-    redirect_to plan_features_path(params[:plan_id]) if @feature.destroy
+    if @feature.destroy
+      redirect_to [params[:plan_id], Plan]
+    else
+      flash[:notice] = "Couldn't  Delete Successfully"
+    end
   end
 
   def auth

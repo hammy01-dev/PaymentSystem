@@ -5,6 +5,7 @@ class ChargesController < ApplicationController
   def create
     stripe = StripeService.new(@subscription_params)
     stripe.pay(params[:stripeEmail], params[:stripeToken], @amount.to_i)
+
     redirect_to root_path
   end
 end
