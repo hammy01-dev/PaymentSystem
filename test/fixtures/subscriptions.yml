@@ -1,0 +1,6 @@
+one:
+  user_id: one
+  plan_id: one
+  created_at: 2022-2-1
+  updated_at: 2022-2-1
+  billing_date: 2022-2-1

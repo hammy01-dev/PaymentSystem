@@ -63,7 +63,5 @@ class PlansController < ApplicationController
     @plan = Plan.find(params[:id])
   end
 
-  def charges
-    redirect_to new_charges_path
-  end
+
 end

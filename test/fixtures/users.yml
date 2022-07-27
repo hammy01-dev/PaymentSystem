@@ -1,0 +1,16 @@
+one:
+  name: 'hamza'
+  email: 'devsinc1@gmail.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  created_at: <%= Time.now - 6.minutes %>
+  updated_at: <%= Time.now - 4.minutes %>
+  role: 1
+
+two:
+  name: 'hassan'
+  email: 'devsinc2@gmail.com'
+  encrypted_password: <%= Devise::Encryptor.digest(User, "password") %>
+  created_at: <%= Time.now - 6.minutes %>
+  updated_at: <%= Time.now - 4.minutes %>
+  role: 0
+

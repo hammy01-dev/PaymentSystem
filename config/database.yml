@@ -7,7 +7,7 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  database: practice
+  database: practice01
   username: postgres
   password: mynewpassword
   host: localhost
@@ -16,7 +16,7 @@ development:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: payment
+  database: payment01
   username: postgres
   password: mynewpassword
   host: localhost

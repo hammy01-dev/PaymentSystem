@@ -14,4 +14,4 @@ class User < ApplicationRecord
   def plans_with_no_features
     plans.includes(:features).where(features: { id: nil })
   end
-end
+end 
