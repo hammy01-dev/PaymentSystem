@@ -2,7 +2,10 @@
 
 one:
   amount: 1
-  subscription_id: one
+  subscription: one
 
+two:
+  amount: 100
+  subscription: one
 # two:
 #   amount: 1

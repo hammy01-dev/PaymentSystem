@@ -11,7 +11,12 @@ class User < ApplicationRecord
   has_many :plans, through: :subscriptions
   has_one_attached :image, dependent: :destroy
 
+  validate :correct_image_type
   def plans_with_no_features
     plans.includes(:features).where(features: { id: nil })
   end
-end 
+
+  def correct_image_type
+    errors.add(:image, 'Must be a PNG or GIF') if image.attached? && !image.content_type.in?(%w[image/png image/jpeg])
+  end
+end

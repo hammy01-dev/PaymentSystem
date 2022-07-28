@@ -40,10 +40,8 @@ class PlansController < ApplicationController
   def update
     if @plan.update(plan_params)
       flash[:notice] = 'Plan Updated Successfully'
-
       redirect_to root_path
     else
-
       flash.now[:notice] = 'could not update the plan'
       render :edit
     end
@@ -62,6 +60,5 @@ class PlansController < ApplicationController
   def set_plan
     @plan = Plan.find(params[:id])
   end
-
 
 end
