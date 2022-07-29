@@ -14,15 +14,11 @@ class PlansController < ApplicationController
   end
 
   def destroy
-    flash[:notice] = if @plan.destroy
-                       'sucessfully deleted the Plan'
+    if @plan.destroy
+      flash[:notice] ='sucessfully deleted the Plan'
+      redirect_to root_path
+    end
 
-                     else
-                       'unable to  delete the Plan'
-
-                     end
-
-    redirect_to root_path
   end
 
   def create
@@ -34,6 +30,7 @@ class PlansController < ApplicationController
     else
 
       flash[:errors] = @plan.errors.full_messages
+      render :new
     end
   end
 

@@ -59,13 +59,15 @@ class PlanControllerTest < ActionDispatch::IntegrationTest
   test 'should go to the projects edit page as the signed in user is  admin' do
     admin_setup
     get edit_plan_path(@plan), params: { plan: { name: 'PLan3' } }
-    assert_response success
+    assert_response :success
   end
 
   test 'should   perform the plan destroy action as signed in user is  admin' do
     admin_setup
-    delete plan_path(@plan)
-    assert_response :success
+    assert_difference('Plan.count', -1) do
+      delete plan_path(@plan)
+    end
+    assert_redirected_to :root
   end
 
   test 'should perform the project create action as signed in user is  admin' do
@@ -74,10 +76,10 @@ class PlanControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
   end
 
-  test 'should not perform the project create action as object is not valid' do
+  test 'should not perform the plan create action as object is not valid' do
     admin_setup
     post plans_path, params: { plan: { name: '', monthly_fee: 200 } }
-    assert_redirected_to root_path
+    assert_template :new
   end
 
   test 'should update plans' do

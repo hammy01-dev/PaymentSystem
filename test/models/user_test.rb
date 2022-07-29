@@ -35,4 +35,9 @@ class UserTest < ActiveSupport::TestCase
 
   end
 
+  test 'scope testing in users' do
+    assert_equal User.first.plans.includes(:features).where(features: { id: nil }), User.first.plans_with_no_features
+
+  end
+
 end

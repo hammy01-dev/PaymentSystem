@@ -26,7 +26,6 @@ class PlanTest < ActiveSupport::TestCase
     assert_not @plan.save, 'Could not saved the plan as monthly_fee is string'
   end
 
-
   test 'should save Plan' do
     assert @plan.save
   end
