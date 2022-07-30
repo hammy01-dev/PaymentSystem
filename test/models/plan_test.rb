@@ -22,7 +22,7 @@ class PlanTest < ActiveSupport::TestCase
   end
 
   test 'should not save Plan without Integer in  Monthly fee' do
-    @plan.monthly_fee = "2hhh33"
+    @plan.monthly_fee = '2hhh33'
     assert_not @plan.save, 'Could not saved the plan as monthly_fee is string'
   end
 
@@ -37,5 +37,4 @@ class PlanTest < ActiveSupport::TestCase
   test 'Plan should have two subscriptions' do
     assert_equal 2, @plan.subscriptions.size
   end
-
 end

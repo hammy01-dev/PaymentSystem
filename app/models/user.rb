@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   def image_type_size
     if image.attached?
-      if image.blob.byte_size > 2097152
+      if image.blob.byte_size > 2_097_152
         image.purge
         errors.add(:image, 'size can not exceed 2mb')
       elsif !image.blob.content_type.in?(%w[image/jpeg image/png])

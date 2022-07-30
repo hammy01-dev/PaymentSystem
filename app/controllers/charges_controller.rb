@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ChargesController < ApplicationController
+  before_action :authenticate_user!
   before_action :subscription_params, :load_plans
   def create
     stripe = StripeService.new(@subscription_params)
@@ -15,6 +16,10 @@ end
 def subscription_params
   @subscription_params = { plan_id: params[:plan_id], user_id: current_user.id }
 end
+
+# def auth
+#   authorize Charge
+# end
 
 def load_plans
   plan = Plan.find(params[:plan_id])

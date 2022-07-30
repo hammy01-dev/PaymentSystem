@@ -37,9 +37,7 @@ class FeaturesController < ApplicationController
   end
 
   def destroy
-    if @feature.destroy
-      redirect_to [params[:plan_id], Plan]
-    end
+    redirect_to [params[:plan_id], Plan] if @feature.destroy
   end
 
   def auth

@@ -26,7 +26,4 @@ class UsageTest < ActiveSupport::TestCase
     @usage.feature_id = nil
     assert_not @usage.save, 'Could not saved usage as feature id is nil'
   end
-
-
-
 end

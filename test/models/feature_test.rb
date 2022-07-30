@@ -7,7 +7,6 @@ class FeatureTest < ActiveSupport::TestCase
     @feature = features(:one)
   end
 
-
   test 'should not save Feature without Name' do
     @feature.name = ''
     assert_not @feature.save
@@ -23,7 +22,7 @@ class FeatureTest < ActiveSupport::TestCase
     assert_not @feature.save, 'Could not saved the feature without a code'
   end
   test 'should not save feature without Integer in  code' do
-    @feature.code = "233r"
+    @feature.code = '233r'
     assert_not @feature.save, 'Could not saved the feature as monthly_fee is string'
   end
 
@@ -33,7 +32,7 @@ class FeatureTest < ActiveSupport::TestCase
   end
 
   test 'should not save feature without Integer in  unit price' do
-    @feature.unit_price = "233r"
+    @feature.unit_price = '233r'
     assert_not @feature.save, 'Could not saved the feature as unit price is string'
   end
 
@@ -43,16 +42,15 @@ class FeatureTest < ActiveSupport::TestCase
   end
 
   test 'should not save feature without Integer in  max_unit_limit' do
-    @feature.max_unit_limit = "233r"
+    @feature.max_unit_limit = '233r'
     assert_not @feature.save, 'Could not saved the feature as max_unit_limit is string'
   end
 
   test 'should  saved the  feature' do
-  assert @feature.save, 'Feature would  not save as code is not  unique'
+    assert @feature.save, 'Feature would  not save as code is not  unique'
   end
 
   test 'Feature should have 2 usages' do
     assert_equal 2, @feature.usages.size
-
   end
 end

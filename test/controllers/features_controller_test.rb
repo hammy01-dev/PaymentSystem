@@ -26,7 +26,7 @@ class FeatureControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
   test 'should not  perform the feature create action as signed in user is not admin' do
-    post plan_features_path(@plan), params: { feature: { code: 30 , description: 'testing feature', unit_price:200, max_unit_limit:300} }
+    post plan_features_path(@plan), params: { feature: { code: 30, description: 'testing feature', unit_price: 200, max_unit_limit: 300 } }
     assert_redirected_to :root
   end
 
@@ -36,8 +36,7 @@ class FeatureControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not update feature as user is not admin' do
-
-    patch feature_url(@feature), params: { feature: { name: 'Feature No A' ,code: 10, unit_price:10, max_unit_limit:20} }
+    patch feature_url(@feature), params: { feature: { name: 'Feature No A', code: 10, unit_price: 10, max_unit_limit: 20 } }
     assert_redirected_to root_path
   end
 
@@ -49,13 +48,13 @@ class FeatureControllerTest < ActionDispatch::IntegrationTest
 
   test 'should  update feature as the signed in user is admin' do
     admin_setup
-    patch feature_url(@feature), params: { feature: { name: 'Feature No A' ,code: 10, unit_price:10, max_unit_limit:20} }
+    patch feature_url(@feature), params: { feature: { name: 'Feature No A', code: 10, unit_price: 10, max_unit_limit: 20 } }
     assert_redirected_to plan_features_path(@plan)
   end
 
   test 'should  not update feature as the object is invalid' do
     admin_setup
-    patch feature_url(@feature), params: { feature: { name: 'Feature No A' ,code: '1302ere', unit_price:10, max_unit_limit:20} }
+    patch feature_url(@feature), params: { feature: { name: 'Feature No A', code: '1302ere', unit_price: 10, max_unit_limit: 20 } }
     assert_template :edit
   end
 
@@ -79,17 +78,15 @@ class FeatureControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to plans_path
   end
 
-
-
   test 'should perform the feature create action as signed in user is  admin' do
     admin_setup
-    post plan_features_path(@plan), params: { feature: { name: 'Feature No A' ,code: 230, unit_price:10, max_unit_limit:20} }
+    post plan_features_path(@plan), params: { feature: { name: 'Feature No A', code: 230, unit_price: 10, max_unit_limit: 20 } }
     assert_redirected_to plan_features_path
   end
 
   test 'should not perform the feature create action as the object is invalid' do
     admin_setup
-    post plan_features_path(@plan), params: { feature: { name: 'Feature No A' ,code:'wwe', unit_price:10, max_unit_limit:20} }
+    post plan_features_path(@plan), params: { feature: { name: 'Feature No A', code: 'wwe', unit_price: 10, max_unit_limit: 20 } }
     assert_template :new
   end
 end
