@@ -6,12 +6,6 @@ class UserTest < ActiveSupport::TestCase
     @user = users(:one)
   end
 
-  # test 'invalid without name' do
-  #   @user.name = nil
-  #   assert_not @user.save
-
-  # end
-
   test 'valid user' do
     assert @user.save
   end

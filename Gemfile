@@ -9,6 +9,7 @@ ruby '2.7.6'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'cloudinary'
 gem 'coffee-rails', '~> 4.2'
+gem 'autorun', '~> 0.1.0'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'mini_magick', '~> 4.8'
@@ -23,7 +24,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webdrivers'
 gem 'whenever', require: false
-
+gem "minitest-stub_any_instance"
 gem 'devise'
 gem 'simplecov', require: false, group: :test
 

@@ -12,7 +12,7 @@ class UsageTest < ActiveSupport::TestCase
     assert @usage.save
   end
 
-  test 'should save usage as usage is nil' do
+  test 'should not save usage as usage is nil' do
     @usage.usage = nil
     assert_not @usage.save
   end

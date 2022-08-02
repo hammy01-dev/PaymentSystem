@@ -2,6 +2,7 @@
 
 require 'test_helper'
 
+
 class PlanTest < ActiveSupport::TestCase
   setup do
     @plan = plans(:one)

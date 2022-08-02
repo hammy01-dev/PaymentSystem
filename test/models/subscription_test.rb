@@ -9,7 +9,7 @@ class SubscriptionTest < ActiveSupport::TestCase
     @users = users(:one)
   end
 
-  test 'should  save as  the billing date is default to now' do
+  test 'should  save as  the billing date is default to datetime.now' do
     @subscription.billing_date = ''
     assert @subscription.save
   end

@@ -14,8 +14,13 @@ class PlansController < ApplicationController
   end
 
   def destroy
-    if @plan.destroy
+    byebug
+    if @plan.destroyed?
+      byebug
       flash[:notice] ='sucessfully deleted the Plan'
+      redirect_to root_path
+    else
+      byebug
       redirect_to root_path
     end
 

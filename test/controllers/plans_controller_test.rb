@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-
+require 'minitest/autorun'
+require 'minitest/stub_any_instance'
 class PlanControllerTest < ActionDispatch::IntegrationTest
+  class MockPlan
+    def destroy
+
+    end
+  end
   setup do
     @user = users(:one)
     sign_in(@user)
@@ -21,10 +27,10 @@ class PlanControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
   end
 
-  test 'should not  perform the project destroy action as signed in user is not admin' do
-    delete plan_path(@plan)
-    assert_response :redirect
-  end
+  # test 'should not  perform the project destroy action as signed in user is not admin' do
+  #   delete plan_path(@plan)
+  #   assert_response :redirect
+  # end
 
   test 'should not  perform the project create action as signed in user is not admin' do
     post plans_path, params: { plan: { name: 'PLan2 ', monthly_fee: 200 } }
@@ -93,4 +99,30 @@ class PlanControllerTest < ActionDispatch::IntegrationTest
     put plan_url(@plan), params: { plan: { name: '' } }
     assert_template :edit
   end
-end
+
+  test 'testing negative delete' do
+    # admin_setup
+    # # assert_difference('Plan.count', -1) do
+    # #   delete plan_path(@plan)
+    # byebug
+    # @plan = MockPlan.new
+    # plans = PlansController.new
+    # @plan.stub :destroy, true do
+    #   byebug
+    #   plans.destroy
+    #   assert_response :redirect
+    # end
+
+    plan = plans(:one)
+    Plan.stub_any_instance(:destroyed?, false) do
+      assert_difference('Plan.count', 0) do
+        delete plan_path(plan)
+        end
+      end
+    end
+
+
+  end
+
+
+
