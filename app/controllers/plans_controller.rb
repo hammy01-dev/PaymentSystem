@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 class PlansController < ApplicationController
-  before_action :authenticate_user!, :auth
+  # before_action :authenticate_user!, :auth
   before_action :set_plan, only: %i[edit update destroy]
 
   def index
-    @plans = Plan.where.not(id: Subscription.current_users(current_user.id).pluck(:plan_id))
+    # @plans = Plan.where.not(id: Subscription.current_users(current_user.id).pluck(:plan_id))
+    @plans = Plan.all
     @plans.preload(:features)
+    respond_to do |format|
+      format.json  { render :json => @plans.to_json(:include=>[:features]) }
+      format.html
+    end
   end
 
   def new
@@ -14,8 +19,10 @@ class PlansController < ApplicationController
   end
 
   def destroy
-    if @plan.destroy
+    if @plan.destroyed?
       flash[:notice] ='sucessfully deleted the Plan'
+      redirect_to root_path
+    else
       redirect_to root_path
     end
 
