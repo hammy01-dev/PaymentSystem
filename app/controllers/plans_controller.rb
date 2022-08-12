@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PlansController < ApplicationController
-  # before_action :authenticate_user!, :auth
+  before_action :authenticate_user!, :auth, only: %i[edit update destroy new create]
   before_action :set_plan, only: %i[edit update destroy]
 
   def index
@@ -9,7 +9,7 @@ class PlansController < ApplicationController
     @plans = Plan.all
     @plans.preload(:features)
     respond_to do |format|
-      format.json  { render :json => @plans.to_json(:include=>[:features]) }
+      format.json { render json: @plans.to_json(include: [:features]) }
       format.html
     end
   end
@@ -19,13 +19,8 @@ class PlansController < ApplicationController
   end
 
   def destroy
-    if @plan.destroyed?
-      flash[:notice] ='sucessfully deleted the Plan'
-      redirect_to root_path
-    else
-      redirect_to root_path
-    end
-
+    flash[:notice] = 'sucessfully deleted the Plan' if @plan.destroyed?
+    redirect_to root_path
   end
 
   def create
@@ -64,5 +59,4 @@ class PlansController < ApplicationController
   def set_plan
     @plan = Plan.find(params[:id])
   end
-
 end

@@ -14,6 +14,16 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.includes(:subscriptions, :plans)
+    respond_to do |format|
+      format.json do
+        render json: @user.to_json(include: [:plans])
+      end
+      # format.html
+    end
+  end
+
   private
 
   def subscription_params

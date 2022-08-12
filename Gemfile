@@ -9,23 +9,23 @@ ruby '2.7.6'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'cloudinary'
 gem 'coffee-rails', '~> 4.2'
+gem 'devise'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'mini_magick', '~> 4.8'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'rack-cors'
 gem 'rails', '~> 5.2.8'
 gem 'rails-controller-testing'
 gem 'sass-rails', '~> 5.0'
+gem 'simplecov', require: false, group: :test
 gem 'stripe'
 gem 'therubyracer'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webdrivers'
 gem 'whenever', require: false
-gem 'rack-cors'
-gem 'devise'
-gem 'simplecov', require: false, group: :test
 
 gem 'devise_invitable', '~> 2.0.0'
 

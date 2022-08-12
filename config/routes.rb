@@ -6,9 +6,10 @@ Rails.application.routes.draw do
 
   resources :plans do
     resources :features, only: %i[index create new]
-    resource :subscriptions, only: %i[create show]
+    resource :subscriptions, only: %i[create]
     resource :charges, only: %i[create new]
   end
+  resource :subscriptions, only: %i[show]
 
   resources :features, only: %i[update destroy edit]
   resources :usages

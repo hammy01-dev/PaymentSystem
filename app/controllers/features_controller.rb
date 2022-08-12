@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FeaturesController < ApplicationController
-  before_action :auth
+  before_action :authenticate_user!, :auth
   before_action :set_feature, only: %i[edit destroy update]
   before_action :set_plan, only: %i[index new create]
 
