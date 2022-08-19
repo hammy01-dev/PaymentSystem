@@ -3,6 +3,8 @@
 class ApplicationController < ActionController::Base
   include Pundit
   # include LoadUser
+  protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   before_action :load_user
   rescue_from Pundit::NotAuthorizedError, with: :authorization_error
   rescue_from ActionController::RoutingError, with: -> { content_not_found }

@@ -4,6 +4,13 @@ class UsagesController < ApplicationController
   def index
     usage = TransactionService.new(1, 2)
     @usages = usage.execute
+    respond_to do |format|
+      format.json do
+        render json: @usages
+      end
+      format.html
+    end
+
   end
 
   def new
@@ -12,6 +19,12 @@ class UsagesController < ApplicationController
     @plan = @user.first.plans
 
     @features = @plan.first.features if @plan.first
+    respond_to do |format|
+      format.json do
+        render json: {user:@user,plan:@plan,features:@features}
+      end
+      format.html
+    end
   end
 
   def plan
