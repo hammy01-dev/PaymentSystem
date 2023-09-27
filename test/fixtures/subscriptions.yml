@@ -1,0 +1,13 @@
+one:
+  user: one
+  plan: one
+  created_at: <%= Time.now - 6.minutes %>
+  updated_at: <%= Time.now - 4.minutes %>
+  billing_date: <%= Time.now - 4.minutes %>
+
+two:
+  user: one
+  plan: one
+  created_at: <%= Time.now - 60.minutes %>
+  updated_at: <%= Time.now - 40.minutes %>
+  billing_date: <%= Time.now - 10.minutes %>

@@ -6,6 +6,8 @@ class Subscription < ApplicationRecord
 
   has_many :usages, dependent: :destroy
 
+  has_many :transactions, dependent: :destroy
+
   scope :current_users, ->(user_id) { where(user_id: user_id) }
   scope :subscribed_users, -> { group(:user_id).pluck(:user_id) }
   scope :get, lambda { |usage_params|

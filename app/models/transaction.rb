@@ -2,4 +2,6 @@
 
 class Transaction < ApplicationRecord
   validates :subscription_id, presence: true
+
+  belongs_to :subscription
 end
